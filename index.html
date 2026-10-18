@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kjeldahl method: protein in food</title>
+<style>
+:root{--bg:#fff;--ink:#1f1e1d;--mut:#5f5e5a;--line:#d3d1c7;--card:#f6f5f0;--gf:#F1EFE8;--gs:#888780;--ac:#534AB7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1e1d;--ink:#f1efe8;--mut:#b4b2a9;--line:#444441;--card:#2c2c2a;--gf:#3a3936;--gs:#888780;--ac:#AFA9EC}}
+:root[data-theme="dark"]{--bg:#1f1e1d;--ink:#f1efe8;--mut:#b4b2a9;--line:#444441;--card:#2c2c2a;--gf:#3a3936;--gs:#888780;--ac:#AFA9EC}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:24px;font-weight:500;margin:0 0 4px}h2{font-size:19px;font-weight:500;margin:0 0 4px}
+p{margin:0 0 10px}.mut{color:var(--mut);font-size:14px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 24px}
+nav a{border:1px solid var(--line);border-radius:8px;padding:6px 12px;color:var(--ink);text-decoration:none;font-size:14px;background:var(--card)}
+section{border-top:1px solid var(--line);padding:20px 0 8px}
+svg{width:100%;height:auto;display:block}
+svg text{fill:var(--ink);font-family:inherit}.ts{font-size:12px;fill:var(--mut)!important}.th{font-size:14px;font-weight:500}
+.ld{stroke:var(--mut);stroke-width:.6;stroke-dasharray:3 3}
+.gy{fill:var(--gf);stroke:var(--gs);stroke-width:.6}.gl{fill:none;stroke:var(--mut);stroke-width:1.5}
+.row{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--mut);margin:10px 0}
+.row input[type=range]{flex:1}.row output{min-width:56px;text-align:right;font-weight:500;color:var(--ink)}
+.sw{width:26px;height:26px;border-radius:50%;border:1px solid var(--gs);flex:none}
+button,select{font:inherit;font-size:14px;padding:5px 10px;border:1px solid var(--gs);border-radius:8px;background:var(--card);color:var(--ink)}
+.msg{font-weight:500;font-size:15px;margin:6px 0 10px}
+.res{background:var(--card);border-radius:8px;padding:10px 12px;font-size:14px;margin:8px 0 14px}
+.rx{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+.ch{display:flex;flex-wrap:nowrap;gap:8px;overflow-x:auto;margin-top:12px;padding-bottom:4px}
+.m{flex:1 0 112px;background:var(--card);border-radius:8px;padding:8px 10px;border:1px solid var(--line)}.m small{display:block;font-size:12px;color:var(--mut)}.m b{font-size:17px;font-weight:500}.m i{display:block;font-style:normal;font-size:12px;color:var(--mut)}
+.one{display:flex;flex-wrap:nowrap;align-items:center;gap:6px;overflow-x:auto;padding-bottom:6px;font-size:13px;white-space:nowrap}.one span{border-radius:8px;padding:6px 10px;border:1px solid var(--line);font-weight:500}.one i{color:var(--mut);font-style:normal}
+.m1,.one .m1{background:rgba(239,159,39,.22);border-color:#BA7517}.m2,.m3,.m4,.one .m2{background:rgba(55,138,221,.2);border-color:#378ADD}.m5,.one .m5{background:rgba(99,153,34,.22);border-color:#639922}.m6,.one .m6{background:rgba(226,75,74,.24);border-color:#E24B4A}.mp,.one .mp{background:rgba(127,119,221,.24);border-color:#7F77DD}
+.sig{text-align:right;margin-top:32px;font-size:12px;color:var(--mut);border-top:1px solid var(--line);padding-top:10px}
+@keyframes wisp{to{stroke-dashoffset:-18}}@keyframes rise{0%{transform:translateY(0);opacity:.9}100%{transform:translateY(-22px);opacity:0}}@keyframes fall{0%{transform:translateY(0);opacity:1}100%{transform:translateY(58px);opacity:0}}
+@media (prefers-reduced-motion:no-preference){.wisp,.vap{stroke-dasharray:5 5;animation:wisp 1.3s linear infinite}.bub{animation:rise 1.4s ease-in infinite}.drp{animation:fall .9s ease-in infinite}}
+</style></head><body><main>
+<h1>Determining protein in food: the Kjeldahl method</h1>
+<p class="mut">Nitrogen is measured in three steps, then converted to protein. Tap a step to jump to it.</p>
+<nav><a href="#digestion">1 Digestion</a><a href="#distillation">2 Distillation</a><a href="#titration">3 Titration</a><a href="#calculation">4 Calculation</a></nav>
+
+<section id="digestion"><h2>1 Digestion</h2>
+<p class="mut">1 g sample + 1 g K₂SO₄ catalyst + 20 mL conc. H₂SO₄, heated until colorless, then diluted to 250 mL. Repeat without sample for the blank.</p>
+<svg viewBox="0 0 680 400" role="img"><title>Digestion apparatus</title><desc>Kjeldahl flask on a heating block under a fume extractor</desc>
+<defs><clipPath id="dfc"><circle cx="250" cy="245" r="70"/></clipPath></defs>
+<polygon class="gy" points="190,30 310,30 272,88 228,88"/>
+<g id="fumes" opacity="0"><path class="wisp" d="M242 96C232 82,252 72,242 58" fill="none" stroke="#B4B2A9" stroke-width="2.5" stroke-linecap="round"/><path class="wisp" d="M254 96C246 80,262 70,254 52" fill="none" stroke="#B4B2A9" stroke-width="2.5" stroke-linecap="round"/></g>
+<rect id="liq" x="170" y="228" width="160" height="100" fill="#E3D3AE" clip-path="url(#dfc)"/>
+<circle class="gl" cx="250" cy="245" r="70"/><path class="gl" d="M235 98V178M265 98V178"/>
+<rect class="gy" x="160" y="312" width="180" height="50" rx="6"/><rect id="glow" x="172" y="352" width="156" height="5" rx="2" fill="#E8593C" opacity="0"/>
+<line class="ld" x1="295" y1="205" x2="380" y2="205"/><text class="th" x="388" y="200">Kjeldahl flask</text><text class="ts" x="388" y="218">Sample + acid + catalyst</text>
+<line class="ld" x1="340" y1="337" x2="380" y2="337"/><text class="th" x="388" y="333">Heating block</text><text class="ts" x="388" y="351">Heat until colorless</text>
+<line class="ld" x1="300" y1="55" x2="380" y2="55"/><text class="th" x="388" y="50">Fume extractor</text><text class="ts" x="388" y="68">Removes SO₂ and acid fumes</text></svg>
+<div class="row"><span>Heating</span><input type="range" id="ds" min="0" max="3" step="0.05" value="0"><span class="sw" id="dsw"></span></div>
+<p class="msg" id="dtx"></p>
+<div class="res"><div class="rx">Protein + H₂SO₄ → CO₂ + H₂O + (NH₄)₂SO₄</div>Result: all nitrogen is now ammonium sulfate. Colors: tan → black → brown → colorless.</div></section>
+
+<section id="distillation"><h2>2 Distillation</h2>
+<p class="mut">10 mL digest + 10 mL 45% NaOH, about 15 min. Ammonia is collected in 10 mL 2% boric acid with 4 drops of Tashiro indicator.</p>
+<svg viewBox="0 0 680 410" role="img"><title>Distillation apparatus</title><desc>Sample tube, condenser and receiving flask</desc>
+<defs><clipPath id="rfc"><polygon points="445,250 475,250 520,380 400,380"/></clipPath><clipPath id="stc"><path d="M60 118V290a25 25 0 0 0 50 0V118Z"/></clipPath></defs>
+<rect x="200" y="52" width="190" height="40" rx="4" fill="#85B7EB" fill-opacity=".3" stroke="var(--mut)"/>
+<line x1="215" y1="92" x2="215" y2="112" stroke="#378ADD" stroke-width="2.5"/><line x1="375" y1="52" x2="375" y2="34" stroke="#378ADD" stroke-width="2.5"/>
+<text class="ts" x="215" y="128" text-anchor="middle">Water in</text><text class="ts" x="375" y="26" text-anchor="middle">Water out</text><text class="th" x="295" y="43" text-anchor="middle">Condenser</text>
+<rect x="60" y="190" width="50" height="130" fill="#D3E3E8" clip-path="url(#stc)"/><path class="gl" d="M60 118V290a25 25 0 0 0 50 0V118"/><rect x="56" y="110" width="58" height="10" rx="2" fill="#A07850"/>
+<g id="tb" opacity="0"><circle class="bub" cx="76" cy="280" r="3" fill="#fff"/><circle class="bub" cx="92" cy="270" r="2.5" fill="#fff" style="animation-delay:.5s"/></g>
+<rect class="gy" x="40" y="318" width="90" height="34" rx="5"/><rect id="hg" x="50" y="346" width="70" height="4" rx="2" fill="#E8593C" opacity="0"/>
+<path d="M85 118V72H460V352" fill="none" stroke="var(--mut)" stroke-width="2"/><path id="vp" class="vap" d="M85 112V72H460V345" fill="none" stroke="#D85A30" stroke-width="1.5" opacity="0"/>
+<rect id="rl" x="395" y="340" width="130" height="60" fill="#9A5FC4" clip-path="url(#rfc)"/><polygon class="gl" points="445,250 475,250 520,380 400,380"/><rect x="441" y="246" width="38" height="5" rx="2" fill="var(--mut)"/>
+<g id="rb" opacity="0"><circle class="bub" cx="456" cy="348" r="3" fill="#fff"/><circle class="bub" cx="464" cy="350" r="2.5" fill="#fff" style="animation-delay:.6s"/></g>
+<text class="th" x="85" y="374" text-anchor="middle">Sample tube</text><text class="ts" x="85" y="392" text-anchor="middle">Digest + NaOH</text><text class="ts" x="140" y="62" text-anchor="middle">NH₃ gas</text>
+<line class="ld" x1="500" y1="350" x2="540" y2="320"/><text class="th" x="546" y="324">Receiving flask</text><text class="ts" x="546" y="342">2% boric acid +</text><text class="ts" x="546" y="358">Tashiro indicator</text></svg>
+<div class="row"><span>Time</span><input type="range" id="tm" min="0" max="15" step="0.5" value="0"><output id="tmo"></output><span class="sw" id="sw"></span></div>
+<p class="msg" id="tx"></p>
+<div class="res"><div class="rx">(NH₄)₂SO₄ + 2 NaOH → 2 NH₃ + 2 H₂O + Na₂SO₄<br>NH₃ + H₃BO₃ → NH₄⁺ + H₂BO₃⁻</div>Result: receiver goes purple-pink → grey → green as ammonia is captured as borate.</div></section>
+
+<section id="titration"><h2>3 Titration</h2>
+<p class="mut">Fill the burette with 0.02 N HCl and titrate the receiving flask until purple appears. Repeat for the blank.</p>
+<svg viewBox="0 0 680 430" role="img"><title>Titration apparatus</title><desc>Burette over a conical flask</desc>
+<defs><clipPath id="cfc"><polygon points="296,300 324,300 370,405 250,405"/></clipPath></defs>
+<rect class="gy" x="170" y="408" width="230" height="12" rx="3"/><rect class="gy" x="190" y="30" width="8" height="378"/><rect class="gy" x="198" y="100" width="100" height="6"/>
+<rect id="bl" x="299" y="55" width="22" height="195" fill="#B5D4F4" fill-opacity=".6"/><rect class="gl" x="298" y="40" width="24" height="212"/>
+<g stroke="var(--mut)" stroke-width=".8"><line x1="298" y1="55" x2="308" y2="55"/><line x1="298" y1="145" x2="308" y2="145"/><line x1="298" y1="235" x2="308" y2="235"/></g>
+<text class="ts" x="290" y="59" text-anchor="end">0</text><text class="ts" x="290" y="149" text-anchor="end">5</text><text class="ts" x="290" y="239" text-anchor="end">10</text>
+<rect x="292" y="252" width="36" height="8" rx="2" fill="var(--mut)"/><path d="M310 260V286" stroke="var(--mut)" stroke-width="2"/><circle id="dp" class="drp" cx="310" cy="290" r="3" fill="#85B7EB" opacity="0"/>
+<rect id="fl" x="240" y="355" width="140" height="60" fill="#4DAA63" clip-path="url(#cfc)"/><polygon class="gl" points="296,300 324,300 370,405 250,405"/>
+<line class="ld" x1="322" y1="90" x2="392" y2="90"/><text class="th" x="400" y="86">Burette</text><text class="ts" x="400" y="104">0.02 N HCl</text>
+<line class="ld" x1="350" y1="380" x2="400" y2="380"/><text class="th" x="408" y="376">Receiving flask</text><text class="ts" x="408" y="394">Borate + indicator</text></svg>
+<div class="row"><span>HCl added</span><input type="range" id="hv" min="0" max="8" step="0.1" value="0"><output id="hvo"></output><span class="sw" id="hw"></span></div>
+<div class="row"><p class="msg" id="htx" style="flex:1;margin:0"></p><button id="jp">Jump to end point</button></div>
+<div class="res"><div class="rx">H₂BO₃⁻ + H⁺ → H₃BO₃</div>Result: green → grey → purple at the end point. Record the HCl volume for sample and blank.</div></section>
+
+<section id="calculation"><h2>4 Calculation</h2>
+<p class="mut">Change the values to see each step, in grams. 1 mL of 0.02 N HCl = 0.00028 g N.</p>
+<div class="row"><span style="width:130px">Sample titre (mL)</span><input type="range" id="vs" min="1" max="20" step="0.1" value="6"><output id="vso"></output></div>
+<div class="row"><span style="width:130px">Blank titre (mL)</span><input type="range" id="vb" min="0" max="2" step="0.1" value="0.5"><output id="vbo"></output></div>
+<div class="row"><span style="width:130px">Sample (g)</span><input type="range" id="w" min="0.5" max="2" step="0.1" value="1"><output id="wo"></output></div>
+<div class="row"><span style="width:130px">Food type</span><select id="f" style="flex:1"><option value="6.25">General protein (6.25)</option><option value="6.38">Milk and dairy (6.38)</option><option value="5.70">Wheat (5.70)</option><option value="5.95">Rice (5.95)</option><option value="5.71">Soy (5.71)</option></select></div>
+<div class="ch" id="chain"></div><p class="mut" style="margin:18px 0 6px">All results in one line</p><div class="one" id="one"></div></section>
+<p class="sig">Miss.Amjad · BIOC314</p></main>
+<script>
+var $=function(i){return document.getElementById(i)};
+function lerp(a,b,f){return a.map(function(x,k){return Math.round(x+(b[k]-x)*f)})}
+function rgb(a){return 'rgb('+a.join(',')+')'}
+var DS=[[227,211,174],[23,23,23],[106,75,43],[234,242,243]],DT=['Start: tan mixture, acid added','Black: organic matter is charring','Brown: boiling slows at low heat','Colorless: nitrogen is now ammonium sulfate'];
+function dig(){var v=+$('ds').value,i=Math.min(Math.floor(v),2),c=rgb(lerp(DS[i],DS[i+1],v-i));$('liq').setAttribute('fill',c);$('dsw').style.background=c;$('glow').setAttribute('opacity',v>0?.9:0);$('fumes').setAttribute('opacity',(v>.2&&v<2.8)?.8:0);$('dtx').textContent=DT[Math.round(v)]}
+var P=[154,95,196],G=[77,170,99],GY=[143,168,154];
+function dis(){var t=+$('tm').value,f=Math.min(Math.max((t-1)/12,0),1),c=rgb(lerp(P,G,f)),on=t>0&&t<15?1:0;$('rl').setAttribute('fill',c);$('sw').style.background=c;$('rl').setAttribute('y',340-t*1.2);$('hg').setAttribute('opacity',t>0?.9:0);$('vp').setAttribute('opacity',on?.8:0);$('tb').setAttribute('opacity',on);$('rb').setAttribute('opacity',on);$('tmo').textContent=t.toFixed(1)+' min';$('tx').textContent=t<1?'Purple-pink: boric acid is acidic, nothing absorbed yet':(t<9?'Turning grey: ammonia is being absorbed':'Green: ammonia captured as borate (about 15 min)')}
+var EP=5.5;
+function tit(){var v=+$('hv').value,f=v/EP,c=f<.85?lerp(G,GY,f/.85):(f<1?lerp(GY,P,(f-.85)/.15):P);c=rgb(c);$('fl').setAttribute('fill',c);$('hw').style.background=c;$('fl').setAttribute('y',355-v*1.5);var tp=55+18*v;$('bl').setAttribute('y',tp);$('bl').setAttribute('height',250-tp);$('dp').setAttribute('opacity',(v>0&&v<8)?1:0);$('hvo').textContent=v.toFixed(1)+' mL';$('htx').textContent=v<=0?'Green: borate from the captured ammonia':(f<.85?'Still green: borate is being neutralised':(f<1?'Fading to grey: close to the end point':'Purple: end point reached. Record the reading'))}
+function calc(){var vs=+$('vs').value,vb=+$('vb').value,w=+$('w').value,f=+$('f').value;$('vso').textContent=vs.toFixed(1);$('vbo').textContent=vb.toFixed(1);$('wo').textContent=w.toFixed(1);
+var n=Math.max(vs-vb,0),g=n*.00028,Y=g*250,gN=Y/10,pn=gN/w*100,pp=pn*f;
+var it=[['1 Net HCl',n.toFixed(2)+' mL','sample − blank'],['2 N in 10 mL aliquot',g.toFixed(5)+' g','net × 0.00028'],['3 Y (× 250)',Y.toFixed(4)+' g','step 2 × 250'],['4 N in sample',gN.toFixed(4)+' g','Y ÷ 10 mL pipetted'],['5 % nitrogen',pn.toFixed(2)+' %','(g N ÷ g sample) × 100'],['6 % crude protein',pp.toFixed(1)+' %','% N × '+f]];
+$('chain').innerHTML=it.map(function(i){return '<div class="m m'+i[0].charAt(0)+'"><small>'+i[0]+'</small><b>'+i[1]+'</b><i>'+i[2]+'</i></div>'}).join('');
+var o=[['Digestion: colorless','m1'],['Distillation: green','m5'],['Titration: purple','mp'],['Net HCl '+n.toFixed(2)+' mL','m1'],['N '+gN.toFixed(4)+' g','m2'],['N '+pn.toFixed(2)+' %','m5'],['Protein '+pp.toFixed(1)+' %','m6']];
+$('one').innerHTML=o.map(function(x){return '<span class="'+x[1]+'">'+x[0]+'</span>'}).join('<i>→</i>')}
+$('ds').oninput=dig;$('tm').oninput=dis;$('hv').oninput=tit;$('jp').onclick=function(){$('hv').value=EP;tit()};
+['vs','vb','w','f'].forEach(function(i){$(i).oninput=calc});dig();dis();tit();calc();
+</script></body></html>
